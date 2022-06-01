@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CabezaNiña extends Actor
 {
+    int speed=2;
     public CabezaNiña(){
         
     }
@@ -18,9 +19,23 @@ public class CabezaNiña extends Actor
     public void act()
     {
         slideAround();
+        collectPills();
+        //minSpeed();
+        traslador();
+        traslador2();
+        traslador3();
+        
     }
     
+     /* void minSpeed()
+    {
+        if(speed>=4){
+            speed = 4; 
+        }
+    }*/
+    
     public void moveAround(){
+        
         if(Greenfoot.isKeyDown("right"))
         {
             setRotation(0);
@@ -48,7 +63,7 @@ public class CabezaNiña extends Actor
             int y= getY();
         if(Greenfoot.isKeyDown("right"))
         {
-            setLocation(x+3, y);
+            setLocation(x+speed, y);
             if(hitWalls())
             {
                 setLocation(x-1, y);
@@ -56,7 +71,7 @@ public class CabezaNiña extends Actor
         }
         if(Greenfoot.isKeyDown("left"))
         {
-            setLocation(x-3, y);
+            setLocation(x-speed, y);
             if(hitWalls())
             {
                 setLocation(x+1, y);
@@ -64,7 +79,7 @@ public class CabezaNiña extends Actor
         }
         if(Greenfoot.isKeyDown("up"))
         {
-           setLocation(x, y-3);
+           setLocation(x, y-speed);
            if(hitWalls())
             {
                 setLocation(x, y+1);
@@ -72,7 +87,7 @@ public class CabezaNiña extends Actor
         }
         if(Greenfoot.isKeyDown("down"))
         {
-            setLocation(x, y+3);
+            setLocation(x, y+speed);
             if(hitWalls())
             {
                 setLocation(x, y-1);
@@ -90,6 +105,43 @@ public class CabezaNiña extends Actor
         else 
         {
             return false;
+        }
+    }
+    
+    public void collectPills()
+    {
+        if(isTouching(Pildora.class)){
+        //speed++;
+        removeTouching(Pildora.class);
+        contador++;
+        }
+    }
+     int contador=0;
+    public void traslador()
+    {
+        if(contador==3){
+            if(isTouching(BasesDatos.class)){
+            Greenfoot.setWorld(new SalonClases());
+            contador=0;
+            }
+        }
+    }
+    public void traslador2()
+    {
+        if(contador==6){
+            if(isTouching(Algoritmos.class)){
+            Greenfoot.setWorld(new SalonClases2());
+            contador=0;
+            }
+        }
+    }
+    public void traslador3()
+    {
+        if(contador==9){
+            if(isTouching(POO.class)){
+            Greenfoot.setWorld(new SalonClases3());
+            contador=0;
+            }
         }
     }
 }

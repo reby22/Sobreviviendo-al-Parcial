@@ -1,34 +1,31 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class CabezaNiño here.
+ * Write a description of class niña here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CabezaNiño extends Actor
+public class NiñaFight2 extends Actor
 {
-    int speed=1; 
-    public CabezaNiño(){
-        
+    int speed = 5;
+    SimpleTimer shoot= new SimpleTimer();
+    int SHOT_INTERVAL = 300;
+    
+    public NiñaFight2()
+    {
+        GreenfootImage myImage = getImage();
+        int myNewHeight = (int)myImage.getHeight()/4;
+        int myNewWidth = (int)myImage.getWidth()/4;
+        myImage.scale(myNewWidth,myNewHeight);
     }
     /**
-     * Act - do whatever the CabezaNiño wants to do. This method is called whenever
+     * Act - do whatever the niña wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
         slideAround();
-        collectCoca();
-        maxSpeed();
-        
-    }
-    
-    public void maxSpeed()
-    {
-        if(speed>=5){
-            speed = 5; 
-        }
     }
     
     public void slideAround()
@@ -67,11 +64,14 @@ public class CabezaNiño extends Actor
                 setLocation(x, y-1);
             }
         }
-        
-        
+        if(Greenfoot.isKeyDown("space")&& shoot.millisElapsed()>SHOT_INTERVAL)
+        {
+            getWorld().addObject(new Tarea(),x,y);
+            shoot.mark();
+            
+        }
             
     }
-    
     public boolean hitWalls()
     {
         if(isTouching(Wall.class))
@@ -83,42 +83,4 @@ public class CabezaNiño extends Actor
             return false;
         }
     }
-    
-    public void collectCoca()
-    {
-        if(isTouching(SpeedBoostCola.class)){
-            speed++;
-        removeTouching(SpeedBoostCola.class);
-        }
-    }
-        int contador=0;
-    public void traslador()
-    {
-        if(contador==9){
-            if(isTouching(POO.class)){
-            Greenfoot.setWorld(new SalonClases());
-            contador=0;
-            }
-        }
-    }
-    public void traslador2()
-    {
-        if(contador>=6){
-            if(isTouching(Algoritmos.class)){
-            Greenfoot.setWorld(new SalonClases());
-            contador=0;
-            }
-        }
-    }
-    public void traslador3()
-    {
-        if(contador>=3){
-            if(isTouching(POO.class)){
-            Greenfoot.setWorld(new SalonClases());
-            contador=0;
-            }
-        }
-    }
-    
-    
 }

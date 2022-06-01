@@ -1,17 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Uresti here.
+ * Write a description of class Apuntes here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Uresti extends Actor
+public class Apuntes extends Actor
 {
-    public Uresti(){
-    }
     /**
-     * Act - do whatever the Uresti wants to do. This method is called whenever
+     * Act - do whatever the Apuntes wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

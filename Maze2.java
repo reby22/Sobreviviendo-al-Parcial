@@ -6,27 +6,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CopyOfMaze extends World
+public class Maze2 extends World
 {
-    
     /**
      * Constructor for objects of class CanguroWorld.
      * 
      */
-    public CopyOfMaze()
+    public Maze2()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
         prepare();
     }
-    
-    
 
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    public void prepare()
+    private void prepare()
     {
         Wall wall = new Wall();
         addObject(wall,70,50);
@@ -1885,51 +1882,145 @@ public class CopyOfMaze extends World
         wall384.setLocation(782,312);
         wall384.setLocation(779,310);
         wall784.setLocation(793,311);
-        removeObject(cabezaNiña);
-        CabezaNiño cabezaNiño = new CabezaNiño();
-        addObject(cabezaNiño,14,354);
-        cabezaNiño.setLocation(13,360);
-        removeObject(pildora7);
-        removeObject(pildora5);
-        removeObject(pildora3);
-        removeObject(pildora2);
-        removeObject(pildora6);
-        removeObject(pildora4);
-        SpeedBoostCola speedBoostCola = new SpeedBoostCola();
-        addObject(speedBoostCola,607,231);
-        removeObject(speedBoostCola);
-
-        SpeedBoostCola speedBoostCola2 = new SpeedBoostCola();
-        addObject(speedBoostCola2,171,229);
-        SpeedBoostCola speedBoostCola3 = new SpeedBoostCola();
-        addObject(speedBoostCola3,217,423);
-        SpeedBoostCola speedBoostCola4 = new SpeedBoostCola();
-        addObject(speedBoostCola4,699,238);
-        SpeedBoostCola speedBoostCola5 = new SpeedBoostCola();
-        addObject(speedBoostCola5,427,271);
-        speedBoostCola5.setLocation(435,268);
-        speedBoostCola.setLocation(393,115);
-        speedBoostCola5.setLocation(390,279);
-        speedBoostCola4.setLocation(700,179);
-        SpeedBoostCola speedBoostCola6 = new SpeedBoostCola();
-        addObject(speedBoostCola6,469,138);
-        wall784.setLocation(791,308);
-        wall784.setLocation(786,305);
-        wall784.setLocation(789,309);
         removeObject(tiempo3);
-        removeObject(wall167);
-
-        SpeedBoostCola speedBoostCola7 = new SpeedBoostCola();
-        addObject(speedBoostCola7,306,74);
-        SpeedBoostCola speedBoostCola8 = new SpeedBoostCola();
-        addObject(speedBoostCola8,570,345);
-        SpeedBoostCola speedBoostCola9 = new SpeedBoostCola();
-        addObject(speedBoostCola9,351,395);
-        SpeedBoostCola speedBoostCola10 = new SpeedBoostCola();
-        addObject(speedBoostCola10,270,149);
         POO pOO = new POO();
-        addObject(pOO,749,449);
+        addObject(pOO,752,446);
+        pOO.setLocation(753,453);
+        pOO.setLocation(749,448);
         Algoritmos algoritmos = new Algoritmos();
-        addObject(algoritmos,339,468);
+        addObject(algoritmos,339,471);
+        Wall wall786 = new Wall();
+        addObject(wall786,309,493);
+        Wall wall787 = new Wall();
+        addObject(wall787,321,493);
+        Wall wall788 = new Wall();
+        addObject(wall788,321,494);
+        Wall wall789 = new Wall();
+        addObject(wall789,331,494);
+        Wall wall790 = new Wall();
+        addObject(wall790,338,494);
+        Wall wall791 = new Wall();
+        addObject(wall791,346,495);
+        Wall wall792 = new Wall();
+        addObject(wall792,358,496);
+        Wall wall793 = new Wall();
+        addObject(wall793,361,496);
+        Wall wall794 = new Wall();
+        addObject(wall794,373,497);
+        wall385.setLocation(308,496);
+        wall386.setLocation(368,495);
+        algoritmos.setLocation(343,462);
+        Wall wall795 = new Wall();
+        addObject(wall795,796,257);
+        Wall wall796 = new Wall();
+        addObject(wall796,795,266);
+        Wall wall797 = new Wall();
+        addObject(wall797,794,269);
+        Wall wall798 = new Wall();
+        addObject(wall798,795,277);
+        Wall wall799 = new Wall();
+        addObject(wall799,796,284);
+        Wall wall800 = new Wall();
+        addObject(wall800,796,281);
+        Wall wall801 = new Wall();
+        addObject(wall801,796,293);
+        Wall wall802 = new Wall();
+        addObject(wall802,796,302);
+        Wall wall803 = new Wall();
+        addObject(wall803,796,309);
+        Wall wall804 = new Wall();
+        addObject(wall804,790,311);
+        wall386.setLocation(365,486);
+        wall386.setLocation(363,487);
+        wall386.setLocation(368,488);
+        wall786.setLocation(311,486);
+        removeObject(wall261);
+        removeObject(wall586);
+        removeObject(wall262);
+        removeObject(wall587);
+        removeObject(wall263);
+        removeObject(wall474);
+        removeObject(wall129);
+        removeObject(wall128);
+        removeObject(wall441);
+        removeObject(wall144);
+        removeObject(wall353);
+        removeObject(wall357);
+        removeObject(wall369);
+        removeObject(wall367);
+        removeObject(wall230);
+        removeObject(wall200);
+        removeObject(wall179);
+        removeObject(wall704);
+        removeObject(wall175);
+        Pildora pildora8 = new Pildora();
+        addObject(pildora8,91,71);
+        Pildora pildora9 = new Pildora();
+        addObject(pildora9,468,69);
+        Pildora pildora10 = new Pildora();
+        addObject(pildora10,228,190);
+        removeObject(wall167);
+        removeObject(wall721);
+        removeObject(algoritmos);
+        removeObject(pildora6);
+        pildora5.setLocation(437,320);
+        pildora2.setLocation(502,317);
+        pildora7.setLocation(187,309);
+        pildora10.setLocation(689,277);
+        pildora3.setLocation(517,147);
+        pildora9.setLocation(460,109);
+        pildora8.setLocation(71,353);
+        removeObject(wall588);
+        removeObject(wall272);
+        removeObject(wall633);
+        removeObject(wall273);
+        pildora3.setLocation(607,235);
+        pildora9.setLocation(474,266);
+        removeObject(wall781);
+        removeObject(wall760);
+        removeObject(pildora3);
+        removeObject(pildora10);
+        removeObject(pildora7);
+        removeObject(pildora4);
+        removeObject(pildora8);
+        Pildora pildora11 = new Pildora();
+        addObject(pildora11,130,193);
+        Pildora pildora12 = new Pildora();
+        addObject(pildora12,396,151);
+        Pildora pildora13 = new Pildora();
+        addObject(pildora13,203,421);
+        Algoritmos algoritmos2 = new Algoritmos();
+        addObject(algoritmos2,758,277);
+        removeObject(algoritmos2);
+        removeObject(pildora11);
+        removeObject(pildora12);
+        removeObject(pildora5);
+        removeObject(pildora2);
+        removeObject(pildora9);
+        removeObject(pildora13);
+
+        Pildora pildora14 = new Pildora();
+        addObject(pildora14,651,66);
+        Pildora pildora15 = new Pildora();
+        addObject(pildora15,683,71);
+        Pildora pildora16 = new Pildora();
+        addObject(pildora16,698,97);
+        pildora15.setLocation(701,79);
+        pildora16.setLocation(699,124);
+        pildora14.setLocation(644,70);
+        pildora15.setLocation(697,72);
+        pildora16.setLocation(479,73);
+        Pildora pildora17 = new Pildora();
+        addObject(pildora17,562,70);
+        Pildora pildora18 = new Pildora();
+        addObject(pildora18,695,153);
+        Pildora pildora19 = new Pildora();
+        addObject(pildora19,520,151);
+        Pildora pildora20 = new Pildora();
+        addObject(pildora20,696,248);
+        Pildora pildora21 = new Pildora();
+        addObject(pildora21,691,306);
+        Pildora pildora22 = new Pildora();
+        addObject(pildora22,581,419);
     }
 }
