@@ -53,5 +53,8 @@ public class MyWorld extends World
         niña2.setLocation(594,370);
         Niño niño2 = new Niño();
         addObject(niño2,726,308);
+        ExitButton exitButton = new ExitButton();
+        addObject(exitButton,722,165);
+        exitButton.setLocation(738,154);
     }
 }

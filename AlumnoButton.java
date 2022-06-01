@@ -1,14 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class HelpButton here.
+ * Write a description of class Alumno here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class HelpButton extends Button
+public class AlumnoButton extends Button
 {
     public  void clicked(){
-        Greenfoot.setWorld(new Instrucciones());
+        Greenfoot.setWorld(new CopyOfMaze());
     }
+    
 }
