@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class AlumnoButton extends Button
 {
     public  void clicked(){
-        Greenfoot.setWorld(new CopyOfMaze());
+        //Greenfoot.setWorld(new CopyOfMaze());
     }
     
 }

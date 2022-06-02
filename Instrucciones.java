@@ -16,9 +16,9 @@ public class Instrucciones extends World
     public Instrucciones()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(800, 600, 1); 
 
-        this.showText("Aqui van las instrucciones", 150, 150);
+        
         prepare();
     }
     
@@ -30,5 +30,8 @@ public class Instrucciones extends World
     {
         previousBotton previousBotton = new previousBotton();
         addObject(previousBotton,69,383);
+        previousBotton.setLocation(55,462);
+        previousBotton.setLocation(64,474);
+        previousBotton.setLocation(55,118);
     }
 }

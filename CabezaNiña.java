@@ -36,22 +36,22 @@ public class CabezaNiña extends Actor
     
     public void moveAround(){
         
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
             move(4);
         }
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("a"))
         {
             setRotation(180);
             move(4);
         }
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("w"))
         {
             setRotation(270);
             move(4);
         }
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("s"))
         {
             setRotation(90);
             move(4);
@@ -113,6 +113,7 @@ public class CabezaNiña extends Actor
         if(isTouching(Pildora.class)){
         //speed++;
         removeTouching(Pildora.class);
+        Maze.score.add(10);
         contador++;
         }
     }

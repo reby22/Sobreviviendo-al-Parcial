@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Maze1 extends World
 {
+    SimpleTimer time= new SimpleTimer();
+    Counter countTime= new Counter(); 
+    int start=0;
+    public static Counter score= new Counter();
     /**
      * Constructor for objects of class CanguroWorld.
      * 
@@ -17,6 +21,29 @@ public class Maze1 extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
         prepare();
+        this.showText("Score: ", 100, 25);
+        this.showText("Time: ", 400, 25);
+        addObject(score,180,25);
+        score.setValue(SalonClases.score.getValue());
+        addObject(countTime,480,25);
+        countTime.setValue(60);
+    }
+    
+    public void act()
+    {
+        if(start ==1)
+        {
+            if(time.millisElapsed()>1000)
+            {
+                countTime.add(-1);
+                time.mark();  
+            }
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            start =1;
+            time.mark();  
+        }
     }
 
     /**
@@ -905,9 +932,9 @@ public class Maze1 extends World
         wall352.setLocation(700,370);
         wall352.setLocation(670,310);
         removeObject(pildora);
-        CabezaNiña cabezaNiña = new CabezaNiña();
-        addObject(cabezaNiña,480,340);
-        cabezaNiña.setLocation(90,70);
+        CopyOfCabezaNiña CopyOfCabezaNiña = new CopyOfCabezaNiña();
+        addObject(CopyOfCabezaNiña,480,340);
+        CopyOfCabezaNiña.setLocation(90,70);
 
         Pildora pildora2 = new Pildora();
         addObject(pildora2,650,190);
@@ -996,7 +1023,7 @@ public class Maze1 extends World
         addObject(wall390,10,390);
         wall382.setLocation(790,250);
         tiempo3.setLocation(750,460);
-        cabezaNiña.setLocation(10,360);
+        CopyOfCabezaNiña.setLocation(10,360);
         Wall wall391 = new Wall();
         addObject(wall391,70,60);
         Wall wall392 = new Wall();

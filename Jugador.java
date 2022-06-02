@@ -19,6 +19,7 @@ public class Jugador extends World
         super(800, 500, 1); 
 
         prepare();
+        this.showText("! S E L E C C I O N A   A   T U   J U G A D O R !", 400, 25);
     }
     
     /**
@@ -40,5 +41,8 @@ public class Jugador extends World
         addObject(alumnaButton,357,477);
         AlumnoButton alumnoButton = new AlumnoButton();
         addObject(alumnoButton,658,473);
+        removeObject(previousBotton);
+        CopyOfCopyOfpreviousBotton copyOfCopyOfpreviousBotton = new CopyOfCopyOfpreviousBotton();
+        addObject(copyOfCopyOfpreviousBotton,92,471);
     }
 }

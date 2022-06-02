@@ -22,6 +22,7 @@ public class Justificante extends Actor
         {
             SalonClases.vidaEnemigo.add(-1);
             getWorld().removeObject(this);
+            SalonClases.score.add(10);
             if(SalonClases.vidaEnemigo.getValue()==0){
                 Greenfoot.setWorld(new Maze1());
             }

@@ -8,17 +8,40 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Maze extends World
 {
-    /**
-     * Constructor for objects of class CanguroWorld.
-     * 
-     */
+    SimpleTimer time= new SimpleTimer();
+    Counter countTime= new Counter(); 
+    int start=0;
+    public static Counter score= new Counter();
+    
     public Maze()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
         prepare();
+        this.showText("Score: ", 100, 25);
+        this.showText("Time: ", 400, 25);
+        addObject(score,180,25);
+        score.setValue(0);
+        addObject(countTime,480,25);
+        countTime.setValue(60);
     }
-
+    
+    public void act()
+    {
+        if(start ==1)
+        {
+            if(time.millisElapsed()>1000)
+            {
+                countTime.add(-1);
+                time.mark();  
+            }
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            start =1;
+            time.mark();  
+        }
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -1973,5 +1996,15 @@ public class Maze extends World
         removeObject(pildora2);
         BasesDatos basesDatos = new BasesDatos();
         addObject(basesDatos,756,277);
+        algoritmos.setLocation(680,330);
+        basesDatos.setLocation(345,459);
+        algoritmos.setLocation(761,282);
+        removeObject(wall650);
+        removeObject(wall649);
+        removeObject(wall241);
+        removeObject(wall242);
+        removeObject(wall648);
+        pildora10.setLocation(372,201);
+        pildora10.setLocation(371,198);
     }
 }

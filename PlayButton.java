@@ -10,7 +10,7 @@ public class PlayButton extends Button
 {
     
      public  void clicked(){
-        Greenfoot.setWorld(new Jugador());
+        Greenfoot.setWorld(new Historia1());
     }
     
 }

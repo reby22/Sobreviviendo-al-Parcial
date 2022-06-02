@@ -22,8 +22,9 @@ public class Tarea extends Actor
         {
             SalonClases2.vidaEnemigo.add(-1);
             getWorld().removeObject(this);
+            SalonClases2.score.add(10);
             if(SalonClases2.vidaEnemigo.getValue()==0){
-                Greenfoot.setWorld(new Maze1());
+                Greenfoot.setWorld(new Maze2());
             }
         }
         else if(getY() <5)

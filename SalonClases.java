@@ -10,6 +10,8 @@ public class SalonClases extends World
 {   
     public static Counter vidaPersonaje = new Counter();
     public static Counter vidaEnemigo = new Counter();
+    public static Counter score = new Counter(); 
+    
 
     public SalonClases()
     {
@@ -19,6 +21,7 @@ public class SalonClases extends World
         this.showText("Profesor", 100, 45);
         this.showText("Alumno", 700, 45);
         this.showText("!PELEA POR TU CALIFICACION!", 400, 25);
+        this.showText("Score", 700, 450);
         
     }
 
@@ -38,6 +41,8 @@ public class SalonClases extends World
         addObject(vidaPersonaje, 700,20);
         vidaPersonaje.setValue(3);
         addObject(vidaEnemigo,100,20);
-        vidaEnemigo.setValue(10);
+        vidaEnemigo.setValue(5);
+        addObject(score,700,480);
+        score.setValue(Maze.score.getValue());
     }
 }

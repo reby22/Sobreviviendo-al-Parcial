@@ -10,7 +10,10 @@ public class Examen extends Actor
 {
     int MOVE= 3;
     public Examen(){
-        
+        GreenfootImage myImage = getImage();
+        int myNewHeight = (int)myImage.getHeight()*2;
+        int myNewWidth = (int)myImage.getWidth()*2;
+        myImage.scale(myNewWidth,myNewHeight);
     }
     /**
      * Act - do whatever the Examen wants to do. This method is called whenever

@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemigo2 extends Actor
 {
-    int x=3;
+    int x=4;
     SimpleTimer shoot= new SimpleTimer();
-    int SHOT_INTERVAL = 300;
+    int SHOT_INTERVAL = 200;
     int MIN_SHOT = 1000; 
-    int SHOT_MAX_INT= 5000;
+    int SHOT_MAX_INT= 4000;
     int randShot = MIN_SHOT +Greenfoot.getRandomNumber(SHOT_MAX_INT);
     /**
      * Act - do whatever the Enemigo1 wants to do. This method is called whenever
