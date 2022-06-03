@@ -23,10 +23,10 @@ public class BalaBasesDatos extends Actor
         {
             SalonClases3.vidaPersonaje.add(-1);
             if(SalonClases3.vidaPersonaje.getValue()==0){
-                GameRecord gameRecord = new GameRecord("aby", SalonClases3.score.getValue() );
-                RecordsManager recordsManager = new RecordsManager("records", 3);
+                GameRecord gameRecord = new GameRecord(Greenfoot.ask("Nombre del Jugador: "), SalonClases3.score.getValue() );
+                RecordsManager recordsManager = new RecordsManager("records.txt", 10);
                 recordsManager.save(gameRecord);
-                 Greenfoot.setWorld(new GameOver());
+                 Greenfoot.setWorld(new ScoreWorld());
             }
             getWorld().removeObject(this);
         }

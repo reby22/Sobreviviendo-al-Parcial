@@ -24,6 +24,9 @@ public class Apuntes extends Actor
             getWorld().removeObject(this);
             SalonClases3.score.add(10);
             if(SalonClases3.vidaEnemigo.getValue()==0){
+                GameRecord gameRecord = new GameRecord(Greenfoot.ask("Nombre del Jugador: "), SalonClases3.score.getValue() );
+                RecordsManager recordsManager = new RecordsManager("records.txt", 10);
+                recordsManager.save(gameRecord);
                 Greenfoot.setWorld(new ScoreWorld());
             }
         }

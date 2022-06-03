@@ -8,7 +8,7 @@ import java.util.*;
 
 public class RecordsManager {
     private String recordsFile;
-    private int maxRecordsFile=3;
+    private int maxRecordsFile=10;
     final static Charset ENCODING = StandardCharsets.UTF_8;
     public RecordsManager(String recordsFile, int maxRecordsInFile) {
         this.recordsFile = recordsFile;

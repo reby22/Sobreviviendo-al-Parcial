@@ -33,9 +33,17 @@ public class Maze extends World
             if(time.millisElapsed()>1000)
             {
                 countTime.add(-1);
-                time.mark();  
+                time.mark(); 
+
             }
         }
+        if(countTime.getValue()==0)
+                {
+                    GameRecord gameRecord = new GameRecord(Greenfoot.ask("Nombre del Jugador: "), SalonClases3.score.getValue() );
+                    RecordsManager recordsManager = new RecordsManager("records.txt", 100);
+                    recordsManager.save(gameRecord);
+                    Greenfoot.setWorld(new ScoreWorld());
+                }
         if(Greenfoot.isKeyDown("right"))
         {
             start =1;

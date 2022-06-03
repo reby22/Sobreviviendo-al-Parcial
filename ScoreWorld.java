@@ -14,10 +14,9 @@ import java.util.*;// (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class ScoreWorld extends World
 {
-    //private int a[] = 0;
-    Counter score[];
-    RecordsManager recordsManager = new RecordsManager("records",3);
-    List<GameRecord> records = recordsManager.getRecords();
+    
+    RecordsManager recordsManager = new RecordsManager("records.txt",3);
+    
 
     /**
      * Constructor for objects of class ScoreWorld.
@@ -27,10 +26,6 @@ public class ScoreWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
-        
-        
-        
-        
 
         prepare();
     }
@@ -42,28 +37,27 @@ public class ScoreWorld extends World
     {
         previousBotton previousBotton = new previousBotton();
         addObject(previousBotton,85,472);
+        List<GameRecord> records = recordsManager.getRecords();
+        
         int i = 0;
         for (GameRecord record: records)
         {
+            Counter score = new Counter();
             
-            score[i]= new Counter();
-            score[i].setValue(record.getScore());
-            i++;
-    
+            score.setValue(record.getScore());
+            addObject(score, 450,100+i);
+            this.showText(record.getPlayerName(), 350, 100+i);
+            
+            i+=80;
+            
         }
-        addObject(score[0], 400,200);
-        addObject(score[1], 400,280);
-        addObject(score[2], 400,360);
         
-        //score.setValue(a[0]);
-        //score1.setValue(a[1]);
-        //score2.setValue(a[2]);
         
-        this.showText("!  S   C   O   R   E  !", 400, 100);
+       
+        
+        this.showText("!  S   C   O   R   E  !", 400, 50);
 
-        this.showText("1.", 330, 200);
-        this.showText("2.", 330, 280);
-        this.showText("3.", 330, 360);
+    
         
     }
 }

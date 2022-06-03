@@ -22,10 +22,10 @@ public class Fuego extends Actor
         {
             SalonClases2.vidaPersonaje.add(-1);
             if(SalonClases2.vidaPersonaje.getValue()==0){
-                GameRecord gameRecord = new GameRecord("aby", SalonClases2.score.getValue());
-                RecordsManager recordsManager = new RecordsManager("records", 3);
+                GameRecord gameRecord = new GameRecord(Greenfoot.ask("Nombre del Jugador: "), SalonClases2.score.getValue());
+                RecordsManager recordsManager = new RecordsManager("records.txt", 10);
                 recordsManager.save(gameRecord);
-                 Greenfoot.setWorld(new GameOver());
+                 Greenfoot.setWorld(new ScoreWorld());
             }
             getWorld().removeObject(this);
         }

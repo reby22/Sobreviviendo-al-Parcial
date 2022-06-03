@@ -8,18 +8,47 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CopyOfMaze extends World
 {
+    SimpleTimer time= new SimpleTimer();
+    Counter countTime= new Counter(); 
+    int start=0;
+    public static Counter score= new Counter();
     
-    /**
-     * Constructor for objects of class CanguroWorld.
-     * 
-     */
     public CopyOfMaze()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 500, 1); 
         prepare();
+        this.showText("Score: ", 100, 25);
+        this.showText("Time: ", 400, 25);
+        addObject(score,180,25);
+        score.setValue(0);
+        addObject(countTime,480,25);
+        countTime.setValue(60);
     }
     
+    public void act()
+    {
+        if(start ==1)
+        {
+            if(time.millisElapsed()>1000)
+            {
+                countTime.add(-1);
+                time.mark(); 
+                if(countTime.getValue()==0)
+                {
+                    GameRecord gameRecord = new GameRecord(Greenfoot.ask("Nombre del Jugador: "), SalonClases3.score.getValue() );
+                    RecordsManager recordsManager = new RecordsManager("records.txt", 3);
+                    recordsManager.save(gameRecord);
+                    Greenfoot.setWorld(new ScoreWorld());
+                }
+            }
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            start =1;
+            time.mark();  
+        }
+    }
     
 
     /**

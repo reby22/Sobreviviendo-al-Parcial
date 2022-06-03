@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NiñaFight2 extends Actor
 {
-    int speed = 5;
+    int speed = 7;
     SimpleTimer shoot= new SimpleTimer();
     int SHOT_INTERVAL = 300;
     
