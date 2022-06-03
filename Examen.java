@@ -28,6 +28,10 @@ public class Examen extends Actor
         {
             SalonClases.vidaPersonaje.add(-1);
             if(SalonClases.vidaPersonaje.getValue()==0){
+                
+                GameRecord gameRecord = new GameRecord("aby", SalonClases.score.getValue() );
+                RecordsManager recordsManager = new RecordsManager("records", 3);
+                recordsManager.save(gameRecord);
                  Greenfoot.setWorld(new GameOver());
             }
             getWorld().removeObject(this);

@@ -22,6 +22,9 @@ public class Fuego extends Actor
         {
             SalonClases2.vidaPersonaje.add(-1);
             if(SalonClases2.vidaPersonaje.getValue()==0){
+                GameRecord gameRecord = new GameRecord("aby", SalonClases2.score.getValue());
+                RecordsManager recordsManager = new RecordsManager("records", 3);
+                recordsManager.save(gameRecord);
                  Greenfoot.setWorld(new GameOver());
             }
             getWorld().removeObject(this);

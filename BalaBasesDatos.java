@@ -23,6 +23,9 @@ public class BalaBasesDatos extends Actor
         {
             SalonClases3.vidaPersonaje.add(-1);
             if(SalonClases3.vidaPersonaje.getValue()==0){
+                GameRecord gameRecord = new GameRecord("aby", SalonClases3.score.getValue() );
+                RecordsManager recordsManager = new RecordsManager("records", 3);
+                recordsManager.save(gameRecord);
                  Greenfoot.setWorld(new GameOver());
             }
             getWorld().removeObject(this);
